@@ -1,0 +1,307 @@
+Learning React Day - 1.
+
+Tools which we are using in this journey.
+
+1. Chrome / Mozilla firefox
+2. VS Code
+3. VS Code Extentions:
+	i) Better Commenets.
+       ii) Brackets Pair Colorization Toggler
+      iii) ES7+ React/Redus/React-Native
+       iv) GitLens-Git supercharged (if you are good in git/github then use this extention else try to write mannual code to push pull requests)
+        v) Prettier - Code formatter
+       vi) VS Code icons 
+      vii) VS Code Emmet
+
+
+Q1. Difference between a Framework and a Liberary ?
+
+Q2. React is a liberary or a framework? 
+
+Q3. What is VS Code Emmet, Boilercode?
+
+
+Let's deve dive into the course....
+
+Creating our first webpage....
+
+first of all we are creating webpage into basic html...
+
+..... display Namaste React using basic html....
+
+attach the code here.....
+
+
+Now if we tell you to do the same thing using javascript can u able to do this??
+
+if yes then do it....
+let suppose there is a root named div in your webpage and you want to add a element inside the root....
+
+inshort create wap to display namaste react in the web page using javascript only.
+
+Steps: 
+	We can do this using DOM manipulation....
+
+1. We need to create eleement.
+2. Add content to the created element.
+3. Append child where you want to add the element.
+
+
+.....attach the code here....and description if u want.....
+
+
+Q4. How the browser get to know about create element, append child and all?
+
+ans. Thats come from browser API, browser knows what is documnet, window, its know what is happeneing inside your browser.
+Browser has a JS Engine, JS Engine gives this functionality to perform all this.
+
+
+Now let's see how we can to the same stuff using REACT. 
+
+
+We can inject React in our code with bare minimum things...
+
+For this we need to set-up few things... from now we are using React CDN to run React in our project later we install it in our local...
+
+So, lets talk about React CDN
+
+Q5. What is CDN? Whai is the use case of CDN? Why we use this? Read about CDN !
+
+Injecting 2 CDN currently to run react.
+.....Attach the CDN.......
+
+* First CDN gives us React(as a global object)
+
+* Second CDN gives us React-DOM(this is for React DOM manipulation)
+
+Let's clear one thing first React is nothing it is just a liberary of Javascript.
+
+if you open the cdn u get to know that all the thing is wriiten in plane js... so dont create much hype that REACT---REACT... it is javascipt codes...
+
+which are created by FACEBOOK developers....it is similar to jQuery
+
+So, don't panic...
+
+Q6. What is Cross-origin? Learn about CORS (cross-origin)
+
+Q7. What is the shortest program of JS?
+Ans. An empty file of js attached in html using script tag.
+
+
+Q8. What is the shortest program of REACT?
+
+Ans. When we attach CDN to our html page then we can consider it as the shortest program of react.
+(run and check the dev tool search React there you get a whole object of react).
+
+Just inject cdn to your index.html or the entry point of your webpage that will become the shortest prog. of REACT.
+
+
+Let's go create elements, push elements into react.
+
+Function which is used.
+1. React.createElement("", {}, "");
+
+it takes 3 parameter,
+* First is from tag name, enter the name of tag which you want to create like h1, p etc pass in the string
+
+* Second takes an object which we discuss later.
+
+* Third takes content of element.
+
+example.
+const heading = React.createElement("h1", {}, "This is a Heading");
+
+this is similar to..
+<h1>This is a Heading</h1>
+
+
+Now if we want to push it in a div called root.
+
+then we need to create an element to assign root element
+
+so, create a root.
+const root = ReactDOM.createRoot(documet.getElementById("root"));
+
+reactDOM.createRoot() tells that whatever you pass in side the function it will become the root element
+
+and everything you are creating or created,everything is rendered inside the root
+
+
+
+Here we are using ReactDOM because we are trying to manipulate the DOM
+
+Now we want to put our heading to the root so we need to use render, it will render the our heading inside the root.
+
+root.render(heading);
+
+React API's is very easy you can easily understand all api's by seeing their name.
+
+
+Now move ahead.
+Q7. What is {} inside React.createElement("", {}, ""); ?
+
+Ans. It is called 'Props', this is the object use to give props to the element.
+
+const heading = React.createElement("h1", {
+	id: "title",
+}, "This is a heading");
+
+console.log(heading) <- check int the console.
+
+it is similar as
+<h1 id = "title">This is a Heading</h1> 
+
+Q8. If we have multiple elements inside the root so when we render new element inside the root then it will add indide the list or it  will overwrite all the things??
+
+Ans. It will overwrite all the things go and check by doing practical.
+
+
+The standard way taht is followed by the professional is they enter a 'Not Rendered' value or they create an element and add content 'Not Rendered' to the element.
+
+this is only for checking that you have rendered anything is working or not, if there is some error...then it will display not rendered which means our root is not configured, or react is not able to do his task this is a smart way used by professionals
+{
+Professionals jo v root tag hota h uske undr ek element jisme value "Not Rendered" bana kr dal dete hai... jisse ye pata lag jata hai ki hm jo v chiz root me render kiye hai wo successfully work kr rha hai ya ni... agr not rendered hi display ho rha it means ki jo v kuch render krna chah rhe wo thk se render ni huwa h 
+}
+
+
+If im doing everything correctly then all the things("Not rendered") is overwrite by the things which is passed inside render.
+
+
+Understand the flow why this is needed??
+
+When u refresh/reload your page continouslly then u get a millisecond lag.
+
+It(Code parser) take some millisecond time to render all the things...
+
+We can't avoid it we can optimise it 
+
+so thats why we need to understand the flow...
+
+So always the parsing begin from the start that is from the html, head, body like this....
+
+try to change the script place, you get error why??????
+
+because we are currently injecting react using CDN so it takes some time to get react from the CDN...
+
+so if you paste all the code above the CDN then think it is possible to use react without injecting..?
+
+No, right... so try to change of the script and try to figure out the problem...
+
+
+----------------------------------
+Nesting of multiple elements(We call him children in react) in a container...
+like this...
+
+<div id = "container">
+	<h1 id="title">Heading 1</h1>
+	<h2 id="title">Heading 1</h2>
+</div>
+
+so to nest the elements first of all we need to create a container first and then create the elements then add all the elements there after that render that container to the root.
+
+let's see the code. 
+
+//Creating the elemenets
+const heading1 = React.createElement("h1", {
+	id: "title",
+}, "Heading 1");
+
+const heading2 = React.createElement("h2", {
+	id: "title",
+}, "Heading 2");
+
+// Creating the container
+const container = React.createElement("div", {
+	id:"container"
+},
+[heading1, heading2]);
+
+so for nesting we need to pass all elements(Childrens) inside an array. we can add as much childrens we can to add
+
+so the .createElement("", {}, "") has two form:
+
+For creating single element <h1>Hii</h1> like this
+we need to use third argument like this "Add Content" 
+
+const heading1 = React.createElement("h1", {
+	if: "title",
+}, "Heading 1");
+
+and for nesting we need to pass all elements(childrens) inside an array
+
+<div id = "container">
+	<h1 id="title">Heading 1</h1>
+	<h2 id="title">Heading 1</h2>
+</div>
+
+const container = React.createElement("div", {
+	id:"container"
+},
+[heading1, heading2]);
+
+//Now add the container inside the root
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(container);
+
+
+if you getting error in console that use unique keys and all....then wait when you learn about 'props' then you get to know that in react you need to pass a unique key to uniquely identify the element by the DOM for virtual DOM Tree... you'll learn it later hold on !!
+ 
+
+How CDN Work....
+
+IMPORTANT POINTS.
+* React can exists withour typescripe, redux, jsx etc.
+
+* At the end React elements are bascially normal java script objects.
+
+go and write console.log(heading);
+you get a js object...
+
+jsx is noting just a js object.
+
+* We can simply use React, just inject the CDN and use.
+
+* We can use simple JS in the react code.
+
+* Create 1 root in you project it is the standard approach.
+
+
+
+
+---------------------------------
+If you have some ques like ?
+
+What is DOM?
+Ans. Document object model.
+
+Q.Why we create Root? can we have multiple root in a single project?
+
+Ans. reactDOM.createRoot() tells that whatever you pass in side the function it will become the root element
+
+and everything you are creating or created, everything is rendered inside the root
+
+why do we need to create root?
+it is just because react will need to know where you want to put all the stuffs.
+
+Can we have multiple root inside a project?
+
+In every project there is only one root and one render method.
+We put/build all the thing inside the created root only.
+
+generally we have only one root.
+
+What is ReactDOM?
+Ans. ReactDOM is responsible for all the dom manipulation using react.
+
+
+
+just go and search on the internet
+
+
+Why react is a great liberary ? 
+Ans. So, when we create our whole project by using html,css,js its become huge.
+
+But in react we can segregate our react code, 
+
