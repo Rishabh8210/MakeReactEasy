@@ -187,8 +187,9 @@ so if you paste all the code above the CDN then think it is possible to use reac
 
 No, right... so try to change of the script and try to figure out the problem...
 
+Q8. Read about async and defer ? how the parsing work internally ?
 
-----------------------------------
+--------------------------------------------------------------
 Nesting of multiple elements(We call him children in react) in a container...
 like this...
 
@@ -267,7 +268,7 @@ jsx is noting just a js object.
 
 * Create 1 root in you project it is the standard approach.
 
----------------------------------
+-----------------------------------------------------------
 If you have some ques like ?
 
 What is DOM?
@@ -318,4 +319,4 @@ But everyone says that react has only jsx this is completely wrong, in the initi
 this ugly style like create elemene, create root, add then render....this traditional style is followed in the initial phase of react and this is the core of React.
 
 You can write all the code in the html file or seperate it in different form like js code in js file, similarly css in css file and 
-and attach all in the html file.
+and attach all in the html file.(this is not react thing this is basic javascript things)
