@@ -112,7 +112,7 @@ example.
 const heading = React.createElement("h1", {}, "This is a Heading");
 
 this is similar to..
-<h1>This is a Heading</h1>
+'<h1>This is a Heading</h1>'
 
 
 Now if we want to push it in a div called root.
@@ -149,7 +149,7 @@ const heading = React.createElement("h1", {
 console.log(heading) <- check int the console.
 
 it is similar as
-<h1 id = "title">This is a Heading</h1> 
+'<h1 id = "title">This is a Heading</h1>' 
 
 Q8. If we have multiple elements inside the root so when we render new element inside the root then it will add indide the list or it  will overwrite all the things??
 
@@ -192,10 +192,10 @@ No, right... so try to change of the script and try to figure out the problem...
 Nesting of multiple elements(We call him children in react) in a container...
 like this...
 
-<div id = "container">
+'<div id = "container">
 	<h1 id="title">Heading 1</h1>
 	<h2 id="title">Heading 1</h2>
-</div>
+</div>'
 
 so to nest the elements first of all we need to create a container first and then create the elements then add all the elements there after that render that container to the root.
 
@@ -220,7 +220,7 @@ so for nesting we need to pass all elements(Childrens) inside an array. we can a
 
 so the .createElement("", {}, "") has two form:
 
-For creating single element <h1>Hii</h1> like this
+For creating single element '<h1>Hii</h1>' like this
 we need to use third argument like this "Add Content" 
 
 const heading1 = React.createElement("h1", {
@@ -229,10 +229,10 @@ const heading1 = React.createElement("h1", {
 
 and for nesting we need to pass all elements(childrens) inside an array
 
-<div id = "container">
+'<div id = "container">
 	<h1 id="title">Heading 1</h1>
 	<h2 id="title">Heading 1</h2>
-</div>
+</div>'
 
 const container = React.createElement("div", {
 	id:"container"
@@ -267,9 +267,6 @@ jsx is noting just a js object.
 
 * Create 1 root in you project it is the standard approach.
 
-
-
-
 ---------------------------------
 If you have some ques like ?
 
@@ -296,9 +293,7 @@ What is ReactDOM?
 Ans. ReactDOM is responsible for all the dom manipulation using react.
 
 
-
 just go and search on the internet
-
 
 Why react is a great liberary ? 
 Ans. So, when we create our whole project by using html,css,js its become huge.
