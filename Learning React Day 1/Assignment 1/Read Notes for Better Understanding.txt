@@ -224,7 +224,7 @@ For creating single element '<h1>Hii</h1>' like this
 we need to use third argument like this "Add Content" 
 
 const heading1 = React.createElement("h1", {
-	if: "title",
+	id: "title",
 }, "Heading 1");
 
 and for nesting we need to pass all elements(childrens) inside an array
@@ -300,3 +300,22 @@ Ans. So, when we create our whole project by using html,css,js its become huge.
 
 But in react we can segregate our react code, 
 
+Now questions arrises that if you want to create a big project then it is easy to
+code like this or very complicated ?
+because everytime if we want to create an element,
+we need to write this line of code to create an element
+const heading1 = React.createElement("element name", {
+	id: "title",
+}, "Element content");
+
+so this is very complicated to create large production level project in this style.
+
+So, for that react came with a idea where you can write whole html, css inside javascript
+so you don't have to to your html, css file to update their just do all the things inside the js and this is known as 'JSX'.
+to avoid this ugly style(react.createElement()) of writing react codes React JSX comes in the scene.
+
+But everyone says that react has only jsx this is completely wrong, in the initial phase of react all project is developed using 
+this ugly style like create elemene, create root, add then render....this traditional style is followed in the initial phase of react and this is the core of React.
+
+You can write all the code in the html file or seperate it in different form like js code in js file, similarly css in css file and 
+and attach all in the html file.
