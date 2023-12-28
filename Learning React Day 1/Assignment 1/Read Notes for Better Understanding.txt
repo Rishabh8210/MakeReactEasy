@@ -5,14 +5,13 @@ Tools which we are using in this journey.
 1. Chrome / Mozilla firefox
 2. VS Code
 3. VS Code Extentions:
-	i) Better Commenets.
+	    i) Better Commenets.
        ii) Brackets Pair Colorization Toggler
       iii) ES7+ React/Redus/React-Native
        iv) GitLens-Git supercharged (if you are good in git/github then use this extention else try to write mannual code to push pull requests)
         v) Prettier - Code formatter
        vi) VS Code icons 
       vii) VS Code Emmet
-
 
 Q1. Difference between a Framework and a Liberary ?
 
@@ -320,3 +319,4 @@ this ugly style like create elemene, create root, add then render....this tradit
 
 You can write all the code in the html file or seperate it in different form like js code in js file, similarly css in css file and 
 and attach all in the html file.(this is not react thing this is basic javascript things)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
