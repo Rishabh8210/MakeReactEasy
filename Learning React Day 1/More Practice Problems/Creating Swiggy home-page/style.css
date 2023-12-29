@@ -61,13 +61,12 @@
     font-size: 18px;
     font-weight: 400;
     border: 0px solid black;
-
 }
 #login-btn:hover, #signup-btn:hover{
     cursor: pointer;
 }
 #login-btn:hover{
-    color: orange;
+    color: rgb(255, 123, 0);
 }
 #header{
     width: 80%;
@@ -94,4 +93,42 @@
 }
 #sub-heading-2, #sub-heading-3{
     color: rgba(0, 0, 0, 0.39);
+}
+#text-fields{
+    width: 60%;
+    height: 50px;
+    border-radius: 0%;
+    border: 0px solid rgba(0, 0, 0, 0.39);
+    outline:1px solid rgba(0, 0, 0, 0.39);
+    font-size: 15px;
+    padding-left: 15px;
+}
+#text-fields:focus{
+    outline:1px solid rgb(255, 123, 0);
+}
+#text-fields::placeholder{
+    color: rgba(0, 0, 0, 0.39);
+}
+
+
+#search-btn{
+    background-color: rgb(255, 123, 0);
+    color: white;
+    width: 110px;
+    height: 51.5px;
+    font-size: 18px;
+    font-weight: 400;  
+    border: 0px; 
+}
+#search-btn:hover{
+    cursor: pointer;
+}
+#text-search{
+    width: 100%;
+    /* height: 100px; */
+    /* background-color: aquamarine; */
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    margin-bottom: 2%;
 }

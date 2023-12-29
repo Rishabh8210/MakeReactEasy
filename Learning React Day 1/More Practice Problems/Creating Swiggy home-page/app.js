@@ -33,6 +33,25 @@ const subHeading1 = React.createElement("p", {
     id:"sub-heading-1",
 }, "Order food from favorite restaurants near you.");
 
+// creating searching field
+const textBox = React.createElement("input", {
+    type:"text",
+    placeholder:"Enter your Location",
+    id:"text-fields"
+})
+
+//Search button
+const searchBtn = React.createElement("button", {
+    id:"search-btn",
+}, "Find Food");
+
+//Merging textBox and searchBtn
+
+const textAndSearch = React.createElement("div", {
+    id:"text-search",
+}, [textBox, searchBtn]);
+
+
 const subHeading2 = React.createElement("p", {
     id:"sub-heading-2",
 }, "Popular cities in india");
@@ -44,7 +63,7 @@ const subHeading3 = React.createElement("p", {
 //Merging all left componenet
 const leftMainContent = React.createElement("div", {
     id:"left-main-content"
-}, [heading1, subHeading1, subHeading2, subHeading3]);
+}, [heading1, subHeading1, textAndSearch, subHeading2, subHeading3]);
 
 const leftMain = React.createElement("div", {
     id:"left-side",

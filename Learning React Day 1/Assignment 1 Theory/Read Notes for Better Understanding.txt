@@ -192,10 +192,10 @@ Q8. Read about async and defer ? how the parsing work internally ?
 Nesting of multiple elements(We call him children in react) in a container...
 like this...
 
-'<div id = "container">
+<div id = "container">
 	<h1 id="title">Heading 1</h1>
 	<h2 id="title">Heading 1</h2>
-</div>'
+</div>
 
 so to nest the elements first of all we need to create a container first and then create the elements then add all the elements there after that render that container to the root.
 
@@ -489,6 +489,18 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 ● What is async and defer?
+  Async and defer are boolean attribute use to load script tag efficiently into our web page.
+
+  After loading a webpage there are major 2 things happening in our browser, that is 
+	1. HTML parsing
+	2. Loading of the script.
+  And furthere 'Loading of script' is divided into to components that is 
+		2.1 Fetching the script from network.
+		2.2 Actually executing script line by line.
+
+
+
+
 
 
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
