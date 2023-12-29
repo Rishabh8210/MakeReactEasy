@@ -1,6 +1,6 @@
-Learning React Day - 1.
+# Learning React Day - 1.
 
-Tools which we are using in this journey.
+# Tools which we are using in this journey.
 
 1. Chrome / Mozilla firefox
 2. VS Code
@@ -20,18 +20,28 @@ Q2. React is a liberary or a framework?
 Q3. What is VS Code Emmet, Boilercode?
 
 
-Let's deve dive into the course....
+# Let's deve dive into the course....
 
 Creating our first webpage....
 
 first of all we are creating webpage into basic html...
 
-..... display Namaste React using basic html....
+# display Namaste React using basic html
+```html
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+	</head>
+	<body>
+		<h1>Hello World</h1>
+	</body>
+	</html>
+```
 
-attach the code here.....
-
-
-Now if we tell you to do the same thing using javascript can u able to do this??
+# Now if i'll tell you to do the same thing using javascript can u able to do this??
 
 if yes then do it....
 let suppose there is a root named div in your webpage and you want to add a element inside the root....
@@ -39,15 +49,33 @@ let suppose there is a root named div in your webpage and you want to add a elem
 inshort create wap to display namaste react in the web page using javascript only.
 
 Steps: 
-	We can do this using DOM manipulation....
+	We can do this using DOM manipulation
 
 1. We need to create eleement.
 2. Add content to the created element.
 3. Append child where you want to add the element.
 
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
 
-.....attach the code here....and description if u want.....
-
+    </div>
+    <script>
+		const heading = document.createElement("h1");
+		const root = document.getElementById("container");
+		heading.textContent = "Hello World";
+		root.appendChild(heading);
+	</script>
+</body>
+</html>
+```
 
 Q4. How the browser get to know about create element, append child and all?
 
@@ -67,17 +95,38 @@ So, lets talk about React CDN
 Q5. What is CDN? Whai is the use case of CDN? Why we use this? Read about CDN !
 
 Injecting 2 CDN currently to run react.
-.....Attach the CDN.......
-
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container"></div>
+	<!-- Firstly import the CDN links of React and React DOM -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script>
+		// Creating react element 
+		const heading = React.createElement("h1", {
+		    id:"title",
+		},"Heading 1");
+		// Setting the root
+		const root = ReactDOM.createRoot(document.getElementById("container"));
+		// Rendering all the elements in the root
+		root.render(heading);
+	</script>
+</body>
+</html>
+```
 * First CDN gives us React(as a global object)
-
 * Second CDN gives us React-DOM(this is for React DOM manipulation)
 
-Let's clear one thing first React is nothing it is just a liberary of Javascript.
+### Let's clear one thing first React is nothing it is just a liberary of Javascript.
 
-if you open the cdn u get to know that all the thing is wriiten in plane js... so dont create much hype that REACT---REACT... it is javascipt codes...
-
-which are created by FACEBOOK developers....it is similar to jQuery
+if you open the cdn u get to know that all the thing is written in plane js... so dont create much hype that REACT---REACT, it is just a pieces of javascipt, which are created by FACEBOOK developers and it is similar to jQuery
 
 So, don't panic...
 
@@ -110,46 +159,44 @@ it takes 3 parameter,
 example.
 const heading = React.createElement("h1", {}, "This is a Heading");
 
-this is similar to..
-'<h1>This is a Heading</h1>'
-
-
+this is similar to...
+```html
+<h1>This is a Heading</h1>
+```
 Now if we want to push it in a div called root.
 
 then we need to create an element to assign root element
 
 so, create a root.
+```javascript
 const root = ReactDOM.createRoot(documet.getElementById("root"));
 
-reactDOM.createRoot() tells that whatever you pass in side the function it will become the root element
-
+reactDOM.createRoot() //tells that whatever you pass in side the function it will become the root element
+/*
 and everything you are creating or created,everything is rendered inside the root
-
-
-
 Here we are using ReactDOM because we are trying to manipulate the DOM
 
-Now we want to put our heading to the root so we need to use render, it will render the our heading inside the root.
-
+Now we want to put our heading to the root so we need to use render, it will render the our heading inside the root. */
 root.render(heading);
-
-React API's is very easy you can easily understand all api's by seeing their name.
-
+//React API's is very easy you can easily understand all api's by seeing their name.
+```
 
 Now move ahead.
 Q7. What is {} inside React.createElement("", {}, ""); ?
 
 Ans. It is called 'Props', this is the object use to give props to the element.
 
+```javascript
 const heading = React.createElement("h1", {
 	id: "title",
 }, "This is a heading");
 
-console.log(heading) <- check int the console.
+console.log(heading) // <- check int the console.
 
-it is similar as
-'<h1 id = "title">This is a Heading</h1>' 
+// it is similar as
 
+<h1 id = "title">This is a Heading</h1>
+```
 Q8. If we have multiple elements inside the root so when we render new element inside the root then it will add indide the list or it  will overwrite all the things??
 
 Ans. It will overwrite all the things go and check by doing practical.
@@ -189,16 +236,16 @@ No, right... so try to change of the script and try to figure out the problem...
 Q8. Read about async and defer ? how the parsing work internally ?
 
 --------------------------------------------------------------
-Nesting of multiple elements(We call him children in react) in a container...
-like this...
-
+# Nesting of multiple elements(We call him children in react) in a container like this...
+```html
 <div id = "container">
 	<h1 id="title">Heading 1</h1>
 	<h2 id="title">Heading 1</h2>
 </div>
-
+```
 so to nest the elements first of all we need to create a container first and then create the elements then add all the elements there after that render that container to the root.
 
+```javascript
 let's see the code. 
 
 //Creating the elemenets
@@ -215,25 +262,31 @@ const container = React.createElement("div", {
 	id:"container"
 },
 [heading1, heading2]);
+```
 
 so for nesting we need to pass all elements(Childrens) inside an array. we can add as much childrens we can to add
 
 so the .createElement("", {}, "") has two form:
 
-For creating single element '<h1>Hii</h1>' like this
+For creating single element like this
+```html
+<h1>Hii</h1>
+```
 we need to use third argument like this "Add Content" 
-
+```javascript
 const heading1 = React.createElement("h1", {
 	id: "title",
 }, "Heading 1");
-
-and for nesting we need to pass all elements(childrens) inside an array
-
-'<div id = "container">
+```
+and for nesting elements like this 
+```html
+<div id = "container">
 	<h1 id="title">Heading 1</h1>
 	<h2 id="title">Heading 1</h2>
-</div>'
-
+</div>
+```
+we need to pass all elements(childrens) inside an array
+```javascript
 const container = React.createElement("div", {
 	id:"container"
 },
@@ -244,22 +297,25 @@ const container = React.createElement("div", {
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(container);
-
+```
 
 if you getting error in console that use unique keys and all....then wait when you learn about 'props' then you get to know that in react you need to pass a unique key to uniquely identify the element by the DOM for virtual DOM Tree... you'll learn it later hold on !!
  
 
 How CDN Work....
 
-IMPORTANT POINTS.
+# IMPORTANT POINTS.
 * React can exists withour typescripe, redux, jsx etc.
-
 * At the end React elements are bascially normal java script objects.
 
-go and write console.log(heading);
-you get a js object...
+go and write this in devTool console.
+```javascript
+console.log(heading);
+```
+you get a js object
 
-jsx is noting just a js object.
+
+* jsx is noting just a js object.
 
 * We can simply use React, just inject the CDN and use.
 
@@ -304,15 +360,16 @@ Now questions arrises that if you want to create a big project then it is easy t
 code like this or very complicated ?
 because everytime if we want to create an element,
 we need to write this line of code to create an element
+```javascript
 const heading1 = React.createElement("element name", {
 	id: "title",
 }, "Element content");
-
+```
 so this is very complicated to create large production level project in this style.
 
 So, for that react came with a idea where you can write whole html, css inside javascript
 so you don't have to to your html, css file to update their just do all the things inside the js and this is known as 'JSX'.
-to avoid this ugly style(react.createElement()) of writing react codes React JSX comes in the scene.
+to avoid this ugly <b>style(react.createElement())</b> of writing react codes React JSX comes in the scene.
 
 But everyone says that react has only jsx this is completely wrong, in the initial phase of react all project is developed using 
 this ugly style like create elemene, create root, add then render....this traditional style is followed in the initial phase of react and this is the core of React.
@@ -406,7 +463,8 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 ● What is CDN? Why do we use it?
-    CDN stands for Content Delivery Network. It is a system of distributed servers that work together to deliver web content, such as images, videos, stylesheets, and scripts, to users based on their geographical location.
+    
+	CDN stands for Content Delivery Network. It is a system of distributed servers that work together to deliver web content, such as images, videos, stylesheets, and scripts, to users based on their geographical location.
 	The main purpose of using a CDN is to improve the performance, reliability, and scalability of web applications and websites.
 
 	The popularity of CDN services continues to grow, and today the majority of web traffic is served through CDNs, including traffic from major sites like Facebook, Netflix, and Amazon.
@@ -450,7 +508,8 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ● What is diference between React and ReactDOM
   
   React:
-    React is the core library for building user interfaces using a component-based architecture. It provides the tools and mechanisms for creating reusable components, managing component state, and handling the rendering of UI elements.
+    
+	React is the core library for building user interfaces using a component-based architecture. It provides the tools and mechanisms for creating reusable components, managing component state, and handling the rendering of UI elements.
 	Usage: Developers use React to define and create components, manage state, handle user input, and manage the overall structure of their applications.
 
   ReactDOM:
@@ -460,8 +519,8 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 ● What is difference between react.development.js and react.production.js files via CDN?
-  The differences between the development and production versions of React, as served via CDN, lie in the optimizations applied to the code to enhance performance and aid debugging.
-  The development version (react.development.js) is intended for use during development and debugging, while the production version (react.production.js) is optimized for deployment in production environments.
+  	The differences between the development and production versions of React, as served via CDN, lie in the optimizations applied to the code to enhance performance and aid debugging.
+  	The development version (react.development.js) is intended for use during development and debugging, while the production version (react.production.js) is optimized for deployment in production environments.
   
   Here are the main differences:
 	Code Size:
@@ -489,7 +548,7 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 ● What is async and defer?
-  Async and defer are boolean attribute use to load script tag efficiently into our web page.
+  	Async and defer are boolean attribute use to load script tag efficiently into our web page.
 
   After loading a webpage there are major 2 things happening in our browser, that is 
 	1. HTML parsing
