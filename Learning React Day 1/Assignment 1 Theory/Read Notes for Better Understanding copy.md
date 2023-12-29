@@ -20,13 +20,13 @@ Q2. React is a liberary or a framework?
 Q3. What is VS Code Emmet, Boilercode?
 
 
-# Let's deve dive into the course....
+# Let's deep dive into the course....
 
 Creating our first webpage....
 
 first of all we are creating webpage into basic html...
 
-# display Namaste React using basic html
+# display Hello World using basic html
 ```html
 	<!DOCTYPE html>
 	<html lang="en">
