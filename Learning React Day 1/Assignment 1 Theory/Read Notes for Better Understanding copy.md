@@ -185,6 +185,8 @@ Now move ahead.
 Q7. What is {} inside React.createElement("", {}, ""); ?
 
 Ans. It is called 'Props', this is the object use to give props to the element.
+we can pass any type of key value inside the props
+for eg. {id:"heading1", hello:"world"} etc... anything which we want to pass we can pass as {key: "value"} pair
 
 ```javascript
 const heading = React.createElement("h1", {
