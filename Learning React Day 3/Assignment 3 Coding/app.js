@@ -174,7 +174,7 @@ const Container10 = () => {
     );
 }
 
-// Create a Header Component from scratch using Functional Components with JSX
+// Create a Header Component from scratch using traditional React 
 // Add a Logo on left
 // Add a search bar in middle
 // Add User icon on right
@@ -207,9 +207,9 @@ const searchBtn = React.createElement("button", {
 })])
 
 // Merging search bar and search button
-const mergingSeaerchBarAndBtn = React.createElement("div", {
+const searching = React.createElement("div", {
     key:"search-btn",
-    className:"mergingSeaerchBarAndBtn"
+    className:"searching"
 },[searchBar,searchBtn]);
 
 
@@ -224,11 +224,34 @@ const userIcon = React.createElement("img", {
 const Header = React.createElement("header", {
     key:"Header",
     id:"Header"
-}, [logo, mergingSeaerchBarAndBtn, userIcon]);
+}, [logo, searching, userIcon]);
+
+// Create a Header Component from scratch using Functional Components with JSX
+// Add a Logo on left
+// Add a search bar in middle
+// Add User icon on right
+// Add CSS to make it look nice
+
+const Headerr = () =>{
+    return (
+        <header>
+            <div className="logo">
+                <img src="https://b.zmtcdn.com/web_assets/8313a97515fcb0447d2d77c276532a511583262271.png" alt="Zomato" />
+            </div>
+            <div className="searching">
+                <input className="searchBar" type="text" placeholder="Enter Food Name" />
+                <button className="searchBtn"><img className="searchBtnImg" src= {pngegg} alt ="Search"/></button>
+            </div>
+            <div className="userIcon">
+                <img src="https://cdn-icons-png.flaticon.com/512/9131/9131529.png" alt="USER"/>
+            </div>
+        </header>
+    );
+}
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 // root.render(container);
 // root.render(container2);
 // root.render(<Container3 />);
 // root.render(Container6()); // this is also possible
-root.render(Header);
+root.render(<Headerr />);
