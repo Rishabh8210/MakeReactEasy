@@ -1890,40 +1890,18 @@ const restaurantList = [
     },
 ];
 
-// Object Destructuring 
-const Reastraunt = ({name, avgRating, maxDeliveryTime, cuisines, locality, cloudinaryImageId}) => {
-    return(
-        <div className ="restaurant-card">
-            <img src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + cloudinaryImageId}/>
-            <h2>{name}</h2>
-            <h3>{avgRating+" Rating"}</h3>
-            <h3>{maxDeliveryTime +" mins"}</h3>
-            <h4>{cuisines.join(", ")}</h4>
-            <h4>{locality}</h4>
-        </div>
-    );
-}
-// const Body = () => {
-//     return(
-//         <div className="restaurant-list">
-//             {/* <Reastraunt name = {restaurantList[0].data.name} avgRating = {restaurantList[0].data.avgRating} maxDeliveryTime = {restaurantList[0].data.maxDeliveryTime} cuisines = {restaurantList[0].data.cuisines} locality = {restaurantList[0].data.locality} cloudinaryImageId = {restaurantList[0].data.cloudinaryImageId}/> */}
-//             {/* or we can also do like this */}
-//             <Reastraunt {...restaurantList[0].data}/>
-//             <Reastraunt {...restaurantList[1].data}/>
-//             <Reastraunt {...restaurantList[2].data}/>
-//             <Reastraunt {...restaurantList[3].data}/>
-//             <Reastraunt {...restaurantList[4].data}/>
-//             <Reastraunt {...restaurantList[5].data}/>
-//             <Reastraunt {...restaurantList[6].data}/>
-//             <Reastraunt {...restaurantList[7].data}/>
-//             <Reastraunt {...restaurantList[8].data}/>
-//             <Reastraunt {...restaurantList[9].data}/>
-            
-            
-//         </div>
-//     );
-// }
-
+// const Reastraunt = (props) => {
+  //     return(
+  //         <div className ="restaurant-card">
+  //             <img src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + props.restaurantId.data.cloudinaryImageId}/>
+  //             <h2>{props.restaurantId.data.name}</h2>
+  //             <h3>{props.restaurantId.data.avgRating+" Rating"}</h3>
+  //             <h3>{props.restaurantId.data.maxDeliveryTime +" mins"}</h3>
+  //             <h4>{props.restaurantId.data.cuisines.join(", ")}</h4>
+  //             <h4>{props.restaurantId.data.locality}</h4>
+  //         </div>
+  //     );
+  // }
 // const Reastraunt = ({restaurantId}) => {
 //     return(
 //         <div className ="restaurant-card">
@@ -1957,7 +1935,40 @@ const Reastraunt = ({name, avgRating, maxDeliveryTime, cuisines, locality, cloud
 //          </div>
 //     );
 // }
-
+// Both the props way and destructuring way is possible we can use anyone of the following method
+// Object Destructuring 
+const Reastraunt = ({name, avgRating, maxDeliveryTime, cuisines, locality, cloudinaryImageId}) => {
+  return(
+      <div className ="restaurant-card">
+          <img src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + cloudinaryImageId}/>
+          <h2>{name}</h2>
+          <h3>{avgRating+" Rating"}</h3>
+          <h3>{maxDeliveryTime +" mins"}</h3>
+          <h4>{cuisines.join(", ")}</h4>
+          <h4>{locality}</h4>
+      </div>
+  );
+}
+// const Body = () => {
+//     return(
+//         <div className="restaurant-list">
+//             {/* <Reastraunt name = {restaurantList[0].data.name} avgRating = {restaurantList[0].data.avgRating} maxDeliveryTime = {restaurantList[0].data.maxDeliveryTime} cuisines = {restaurantList[0].data.cuisines} locality = {restaurantList[0].data.locality} cloudinaryImageId = {restaurantList[0].data.cloudinaryImageId}/> */}
+//             {/* or we can also do like this */}
+//             <Reastraunt {...restaurantList[0].data}/>
+//             <Reastraunt {...restaurantList[1].data}/>
+//             <Reastraunt {...restaurantList[2].data}/>
+//             <Reastraunt {...restaurantList[3].data}/>
+//             <Reastraunt {...restaurantList[4].data}/>
+//             <Reastraunt {...restaurantList[5].data}/>
+//             <Reastraunt {...restaurantList[6].data}/>
+//             <Reastraunt {...restaurantList[7].data}/>
+//             <Reastraunt {...restaurantList[8].data}/>
+//             <Reastraunt {...restaurantList[9].data}/>
+          
+          
+//         </div>
+//     );
+// }
 // But what if we have too many Restaurants. we are adding all in the website like this?? 
 // obvisouly No. so, either we loop them or we use something else.
 
