@@ -19,7 +19,7 @@
                 - Copyrights
        
 */
-import React from 'react'
+import React, { forwardRef } from 'react'
 import ReactDOM from 'react-dom/client'
 import foodify from './foodify.png'
 
@@ -1903,25 +1903,26 @@ const Reastraunt = ({name, avgRating, maxDeliveryTime, cuisines, locality, cloud
         </div>
     );
 }
-const Body = () => {
-    return(
-        <div className="restaurant-list">
-            {/* <Reastraunt name = {restaurantList[0].data.name} avgRating = {restaurantList[0].data.avgRating} maxDeliveryTime = {restaurantList[0].data.maxDeliveryTime} cuisines = {restaurantList[0].data.cuisines} locality = {restaurantList[0].data.locality} cloudinaryImageId = {restaurantList[0].data.cloudinaryImageId}/> */}
-            <Reastraunt {...restaurantList[0].data}/>
-            <Reastraunt {...restaurantList[1].data}/>
-            <Reastraunt {...restaurantList[2].data}/>
-            <Reastraunt {...restaurantList[3].data}/>
-            <Reastraunt {...restaurantList[4].data}/>
-            <Reastraunt {...restaurantList[5].data}/>
-            <Reastraunt {...restaurantList[6].data}/>
-            <Reastraunt {...restaurantList[7].data}/>
-            <Reastraunt {...restaurantList[8].data}/>
-            <Reastraunt {...restaurantList[9].data}/>
+// const Body = () => {
+//     return(
+//         <div className="restaurant-list">
+//             {/* <Reastraunt name = {restaurantList[0].data.name} avgRating = {restaurantList[0].data.avgRating} maxDeliveryTime = {restaurantList[0].data.maxDeliveryTime} cuisines = {restaurantList[0].data.cuisines} locality = {restaurantList[0].data.locality} cloudinaryImageId = {restaurantList[0].data.cloudinaryImageId}/> */}
+//             {/* or we can also do like this */}
+//             <Reastraunt {...restaurantList[0].data}/>
+//             <Reastraunt {...restaurantList[1].data}/>
+//             <Reastraunt {...restaurantList[2].data}/>
+//             <Reastraunt {...restaurantList[3].data}/>
+//             <Reastraunt {...restaurantList[4].data}/>
+//             <Reastraunt {...restaurantList[5].data}/>
+//             <Reastraunt {...restaurantList[6].data}/>
+//             <Reastraunt {...restaurantList[7].data}/>
+//             <Reastraunt {...restaurantList[8].data}/>
+//             <Reastraunt {...restaurantList[9].data}/>
             
             
-        </div>
-    );
-}
+//         </div>
+//     );
+// }
 
 // const Reastraunt = ({restaurantId}) => {
 //     return(
@@ -1940,29 +1941,46 @@ const Body = () => {
 //         <div className="restaurant-list">
 //             <Reastraunt restaurantId = {restaurantList[0]}/>
 //             <Reastraunt restaurantId = {restaurantList[1]}/>
-            // <Reastraunt restaurantId = {restaurantList[2]}/>
-            // <Reastraunt restaurantId = {restaurantList[3]}/>
-            // <Reastraunt restaurantId = {restaurantList[4]}/>
-            // <Reastraunt restaurantId = {restaurantList[5]}/>
-            // <Reastraunt restaurantId = {restaurantList[6]}/>
-            // <Reastraunt restaurantId = {restaurantList[7]}/>
-            // <Reastraunt restaurantId = {restaurantList[8]}/>
-            // <Reastraunt restaurantId = {restaurantList[9]}/>
-            // <Reastraunt restaurantId = {restaurantList[10]}/>
-            // <Reastraunt restaurantId = {restaurantList[11]}/>
-            // <Reastraunt restaurantId = {restaurantList[12]}/>
-            // <Reastraunt restaurantId = {restaurantList[13]}/>
-            // <Reastraunt restaurantId = {restaurantList[14]}/>
-//         </div>
+//             <Reastraunt restaurantId = {restaurantList[2]}/>
+//             <Reastraunt restaurantId = {restaurantList[3]}/>
+//             <Reastraunt restaurantId = {restaurantList[4]}/>
+//             <Reastraunt restaurantId = {restaurantList[5]}/>
+//             <Reastraunt restaurantId = {restaurantList[6]}/>
+//             <Reastraunt restaurantId = {restaurantList[7]}/>
+//             <Reastraunt restaurantId = {restaurantList[8]}/>
+//             <Reastraunt restaurantId = {restaurantList[9]}/>
+//             <Reastraunt restaurantId = {restaurantList[10]}/>
+//             <Reastraunt restaurantId = {restaurantList[11]}/>
+//             <Reastraunt restaurantId = {restaurantList[12]}/>
+//             <Reastraunt restaurantId = {restaurantList[13]}/>
+//             <Reastraunt restaurantId = {restaurantList[14]}/>
+//          </div>
 //     );
 // }
+
+// But what if we have too many Restaurants. we are adding all in the website like this?? 
+// obvisouly No. so, either we loop them or we use something else.
+
+// We can render them using a loop because they are comming from backend in a form of object or array,
+// but here we are using map property to render thema all  because they are comming in array form from backend and it is a std method or preferable approach
+
+const Body = () => {
+  return(
+    <div className='restaurant-list'>
+      { 
+        restaurantList.map((restaurant)=>{
+          return <Reastraunt {...restaurant.data} key={restaurant.data.id}/>
+        })
+      }
+    </div>
+  );
+}
 
 const Footer = () => {
     return(
         <p className="footer">Copyright @ Rishabh.</p>
     );
 }
-
 const AppLayout = () => {
     return(
         <>
