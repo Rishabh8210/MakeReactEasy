@@ -30,3 +30,18 @@ html, body{
     font-weight: bolder;
     cursor: pointer;
 }
+.restaurant-card{
+    border: 1px solid black;
+    width: 200px;
+    padding: 10px;
+    margin: 10px;
+
+}
+.restaurant-card > img{
+    width: 100%;
+}
+.restaurant-list{
+    display: flex;
+    flex-wrap: wrap;
+
+}
