@@ -1891,17 +1891,19 @@ const restaurantList = [
 ];
 
 // const Reastraunt = (props) => {
-  //     return(
-  //         <div className ="restaurant-card">
-  //             <img src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + props.restaurantId.data.cloudinaryImageId}/>
-  //             <h2>{props.restaurantId.data.name}</h2>
-  //             <h3>{props.restaurantId.data.avgRating+" Rating"}</h3>
-  //             <h3>{props.restaurantId.data.maxDeliveryTime +" mins"}</h3>
-  //             <h4>{props.restaurantId.data.cuisines.join(", ")}</h4>
-  //             <h4>{props.restaurantId.data.locality}</h4>
-  //         </div>
-  //     );
-  // }
+//       return(
+//           <div className ="restaurant-card">
+//               <img src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + props.restaurantId.data?.cloudinaryImageId}/>
+//               <h2>{props.restaurantId.data?.name}</h2>
+//               <h3>{props.restaurantId.data?.avgRating+" Rating"}</h3>
+//               <h3>{props.restaurantId.data?.maxDeliveryTime +" mins"}</h3>
+//               <h4>{props.restaurantId.data?.cuisines.join(", ")}</h4>
+//               <h4>{props.restaurantId.data?.locality}</h4>
+//           </div>
+//       );
+//   }
+
+// Method 2... Destructuring
 // const Reastraunt = ({restaurantId}) => {
 //     return(
 //         <div className ="restaurant-card">
