@@ -1966,8 +1966,6 @@ const Reastraunt = ({name, avgRating, maxDeliveryTime, cuisines, locality, cloud
 //             <Reastraunt {...restaurantList[7].data}/>
 //             <Reastraunt {...restaurantList[8].data}/>
 //             <Reastraunt {...restaurantList[9].data}/>
-          
-          
 //         </div>
 //     );
 // }
