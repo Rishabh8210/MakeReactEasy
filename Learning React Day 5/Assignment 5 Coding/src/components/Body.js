@@ -11,7 +11,7 @@ const FetchData = () => {
                 setSearchTest(e.target.value);
             }}/>
             <button onClick={() => {
-                    console.log(searchTest)
+                    alert(searchTest)
                 }
             }>Search</button>
         </div>
