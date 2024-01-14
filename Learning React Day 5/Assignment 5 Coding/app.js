@@ -18,24 +18,23 @@
                 - Links
                 - Copyrights
 */
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import foodify from './foodify.png'
 
-// Logo
-const Logo = () => {
+import React from "react"
+import ReactDOM from "react-dom/client"
+import logo from './foodify.png'
+
+const Logo = () =>{
     return (
-        <a href='/'>
-            <img className='logo' src={foodify} alt='Foofify-Reastraunt'/>
-        </a>
+        <div className="logo">
+            <a href="/"><img className="logo-img" src={logo} /></a>
+        </div>
     );
 }
-// Header
-const Header = () => {
+
+const Nav = ()=>{
     return(
-        <div className='header'>
-            <Logo />
-            <div className='nav-bar'>
+        <div className="nav-bar">
+            <div className="nav-items">
                 <ul>
                     <li>Home</li>
                     <li>About</li>
@@ -47,27 +46,14 @@ const Header = () => {
     );
 }
 
-// Hard Coded data
 // const restaurantList = {
+//     id:"101",
 //     image:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/bz9zkh2aqywjhpankb07",
-//     name:"Dominos Pizza",
-//     rating:"4.3",
+//     name:"Darling Cafe",
+//     rating:"4.5",
 //     time:"35",
-//     cusines:["Italian", "Chiniese"],
-//     location:"Vellore"
-// }
-// const Reastraunt = () => {
-//     return(
-//         <div className ="restaurant-card">
-//             
-//            <img alt = "image" src={restaurantList.image}/>
-//             <h2>{restaurantList.name}</h2>
-//             <h3>{restaurantList.rating+" Rating"}</h3>
-//             <h3>{restaurantList.time +" mins"}</h3>
-//             <h4>{restaurantList.cusines.join(", ")}</h4>
-//             <h4>{restaurantList.location}</h4>
-//         </div>
-//     );
+//     cusines:["Italian", "Chinies"],
+//     location:"Vellore",
 // }
 
 // RestaurantList is JSON Data for displaying cards
@@ -1889,117 +1875,61 @@ const restaurantList = [
     },
 ];
 
-// const Reastraunt = (props) => {
-//       return(
-//           <div className ="restaurant-card">
-//               <img src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + props.restaurantId.data?.cloudinaryImageId}/>
-//               <h2>{props.restaurantId.data?.name}</h2>
-//               <h3>{props.restaurantId.data?.avgRating+" Rating"}</h3>
-//               <h3>{props.restaurantId.data?.maxDeliveryTime +" mins"}</h3>
-//               <h4>{props.restaurantId.data?.cuisines.join(", ")}</h4>
-//               <h4>{props.restaurantId.data?.locality}</h4>
-//           </div>
-//       );
-//   }
-
-// Method 2... Destructuring
-// const Reastraunt = ({restaurantId}) => {
-//     return(
-//         <div className ="restaurant-card">
-//             <img src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + restaurantId.data.cloudinaryImageId}/>
-//             <h2>{restaurantId.data.name}</h2>
-//             <h3>{restaurantId.data.avgRating+" Rating"}</h3>
-//             <h3>{restaurantId.data.maxDeliveryTime +" mins"}</h3>
-//             <h4>{restaurantId.data.cuisines.join(", ")}</h4>
-//             <h4>{restaurantId.data.locality}</h4>
-//         </div>
-//     );
-// }
-// const Body = () => {
-//     return(
-//         <div className="restaurant-list">
-//             <Reastraunt restaurantId = {restaurantList[0]}/>
-//             <Reastraunt restaurantId = {restaurantList[1]}/>
-//             <Reastraunt restaurantId = {restaurantList[2]}/>
-//             <Reastraunt restaurantId = {restaurantList[3]}/>
-//             <Reastraunt restaurantId = {restaurantList[4]}/>
-//             <Reastraunt restaurantId = {restaurantList[5]}/>
-//             <Reastraunt restaurantId = {restaurantList[6]}/>
-//             <Reastraunt restaurantId = {restaurantList[7]}/>
-//             <Reastraunt restaurantId = {restaurantList[8]}/>
-//             <Reastraunt restaurantId = {restaurantList[9]}/>
-//             <Reastraunt restaurantId = {restaurantList[10]}/>
-//             <Reastraunt restaurantId = {restaurantList[11]}/>
-//             <Reastraunt restaurantId = {restaurantList[12]}/>
-//             <Reastraunt restaurantId = {restaurantList[13]}/>
-//             <Reastraunt restaurantId = {restaurantList[14]}/>
-//          </div>
-//     );
-// }
-// Both the props way and destructuring way is possible we can use anyone of the following method
-// Object Destructuring 
-const Reastraunt = ({name, avgRating, maxDeliveryTime, cuisines, locality, cloudinaryImageId}) => {
-  return(
-      <div className ="restaurant-card">
-          <img src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + cloudinaryImageId}/>
-          <h2>{name}</h2>
-          <h3>{avgRating+" Rating"}</h3>
-          <h3>{maxDeliveryTime +" mins"}</h3>
-          <h4>{cuisines.join(", ")}</h4>
-          <h4>{locality}</h4>
-      </div>
-  );
-}
-// const Body = () => {
-//     return(
-//         <div className="restaurant-list">
-//             {/* <Reastraunt name = {restaurantList[0].data.name} avgRating = {restaurantList[0].data.avgRating} maxDeliveryTime = {restaurantList[0].data.maxDeliveryTime} cuisines = {restaurantList[0].data.cuisines} locality = {restaurantList[0].data.locality} cloudinaryImageId = {restaurantList[0].data.cloudinaryImageId}/> */}
-//             {/* or we can also do like this */}
-//             <Reastraunt {...restaurantList[0].data}/>
-//             <Reastraunt {...restaurantList[1].data}/>
-//             <Reastraunt {...restaurantList[2].data}/>
-//             <Reastraunt {...restaurantList[3].data}/>
-//             <Reastraunt {...restaurantList[4].data}/>
-//             <Reastraunt {...restaurantList[5].data}/>
-//             <Reastraunt {...restaurantList[6].data}/>
-//             <Reastraunt {...restaurantList[7].data}/>
-//             <Reastraunt {...restaurantList[8].data}/>
-//             <Reastraunt {...restaurantList[9].data}/>
-//         </div>
-//     );
-// }
-// But what if we have too many Restaurants. we are adding all in the website like this?? 
-// obvisouly No. so, either we loop them or we use something else.
-
-// We can render them using a loop because they are comming from backend in a form of object or array,
-// but here we are using map property to render thema all  because they are comming in array form from backend and it is a std method or preferable approach
-
-const Body = () => {
-  return(
-    <div className='restaurant-list'>
-      { 
-        restaurantList.map((restaurant)=>{
-          return <Reastraunt {...restaurant.data} key={restaurant.data.id}/>
-        })
-      }
-    </div>
-  );
-}
-
-const Footer = () => {
-    return(
-        <p className="footer">Copyright @ Rishabh.</p>
+const RestaurantCard = ({name, avgRating, maxDeliveryTime, cuisines, locality, cloudinaryImageId}) => {
+    return (
+        <div className="restaurant-card">
+            <div className="restaurant-card-logo">
+                <img src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/"+cloudinaryImageId}/>
+            </div>
+            <div className="restaurant-card-desc">
+                <h3>{name}</h3>
+                <h3>{avgRating} ● {maxDeliveryTime} mins</h3>
+                <h3>{cuisines.join(", ")}</h3>
+                <h3>{locality}</h3>
+            </div>
+        </div>
     );
 }
-const AppLayout = () => {
+
+const Body = ()=>{
+    return (
+        <div className="restaurantList">
+            <RestaurantCard {...restaurantList[0].data}/>
+            <RestaurantCard {...restaurantList[1].data}/>
+            <RestaurantCard {...restaurantList[2].data}/>
+            <RestaurantCard {...restaurantList[3].data}/>
+            <RestaurantCard {...restaurantList[4].data}/>
+            <RestaurantCard {...restaurantList[5].data}/>
+            <RestaurantCard {...restaurantList[6].data}/>
+            <RestaurantCard {...restaurantList[7].data}/>
+            <RestaurantCard {...restaurantList[8].data}/>
+            <RestaurantCard {...restaurantList[9].data}/>
+            <RestaurantCard {...restaurantList[10].data}/>
+            <RestaurantCard {...restaurantList[11].data}/>
+            <RestaurantCard {...restaurantList[12].data}/>
+        </div>
+    );
+}
+const Footer = ()=>{
+    return <h1>Footer</h1>
+}
+const Header = ()=>{
     return(
-        <>
+        <div className="header">
+            <Logo />
+            <Nav />
+        </div>
+    );
+}
+
+const Layout = ()=>{
+    return (
+        <React.Fragment>
             <Header />
             <Body />
             <Footer />
-        </>
+        </React.Fragment>
     );
 }
-
-const root = ReactDOM.createRoot(document.getElementsByClassName("container")[0]);
-root.render(<AppLayout />);
+const root = ReactDOM.createRoot(document.getElementById("container"));
+root.render(<Layout />)
