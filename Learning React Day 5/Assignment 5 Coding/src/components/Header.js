@@ -20,11 +20,24 @@ const Nav = ()=>{
         </div>
     );
 }
+const Authentication = () => {
+    return (
+        <div className='authentication'>
+            <div className = "sign in">
+                <button>Log in</button>
+            </div>
+            <div className = "sign up">
+                <button>Sign up</button>
+            </div>
+        </div>
+    )
+}
 const Header = ()=>{
     return(
         <div className="header">
             <Logo />
             <Nav />
+            <Authentication />
         </div>
     );
 }

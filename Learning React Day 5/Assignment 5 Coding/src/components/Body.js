@@ -1,6 +1,6 @@
 import Reastraunt from "../components/Restaurant.js"
 import {restaurantList} from "../../common.js"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import ShimerUI from "../components/ShimerUI.js"
 
 const filterData = function(searchTest, restaurantList){
@@ -13,6 +13,9 @@ const Body = () => {
     const [searchTest, setSearchTest] = useState("");
     const [restaurants, setFilteredRestaurantData] = useState(restaurantList);
     const [dataFound, setDataFound] = useState(false);
+    useEffect(()=>{
+        console.log("Hii Guy's")
+    }, [])
     console.log("render()");
     return (
         <>
