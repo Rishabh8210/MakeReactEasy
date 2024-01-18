@@ -1,6 +1,7 @@
 import Reastraunt from "../components/Restaurant.js"
 import {restaurantList} from "../../common.js"
 import { useState } from "react"
+import ShimerUI from "../components/ShimerUI.js"
 
 const filterData = function(searchTest, restaurantList){
     const filterDataFromList = restaurantList.filter((restaurant) =>{
@@ -12,6 +13,7 @@ const Body = () => {
     const [searchTest, setSearchTest] = useState("");
     const [restaurants, setFilteredRestaurantData] = useState(restaurantList);
     const [dataFound, setDataFound] = useState(false);
+    console.log("render()");
     return (
         <>
             <div className="search-restaurant">
@@ -30,7 +32,8 @@ const Body = () => {
             </div>
             {
                 dataFound ? (
-                    <p>No Data Found</p>
+                    <h3>No Data Found</h3>
+                    // <ShimerUI />
                 ) : 
             <div className="restaurantList">
                 {

@@ -1,4 +1,4 @@
-import logo from '../Assets/foodify.png'
+import logo from '../Assets/images/foodify.png'
 const Logo = () =>{
     return (
         <div className="logo">
