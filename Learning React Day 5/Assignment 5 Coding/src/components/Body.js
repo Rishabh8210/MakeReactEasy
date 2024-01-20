@@ -2,6 +2,7 @@ import Reastraunt from "../components/Restaurant.js"
 import {restaurantList} from "../../common.js"
 import { useEffect, useState } from "react"
 import ShimerUI from "../components/ShimerUI.js"
+import {Restaurant_URL} from "../../common.js"
 
 const filterData = function(searchTest, restaurantList){
     const filterDataFromList = restaurantList.filter((restaurant) =>{
@@ -11,13 +12,21 @@ const filterData = function(searchTest, restaurantList){
 }
 const Body = () => {
     const [searchTest, setSearchTest] = useState("");
+    const [allRestaurants, setAllRestaurant] = useState([]);
     const [restaurants, setFilteredRestaurantData] = useState(restaurantList);
     const [dataFound, setDataFound] = useState(false);
     useEffect(()=>{
-        console.log("Hii Guy's")
+        getRestaurant();
     }, [])
-    console.log("render()");
-    return (
+
+    async function getRestaurant(){
+        const restaurantData = await fetch(Restaurant_URL);
+        const json = await restaurantData.json();
+        
+        console.log(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
+        setAllRestaurant(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants)
+    }
+    return (allRestaurants.length == 0) ? (<div style={{display:"flex", gap:"10px", flexWrap:"wrap"}}><ShimerUI /><ShimerUI /><ShimerUI /><ShimerUI /><ShimerUI /><ShimerUI /><ShimerUI /><ShimerUI /><ShimerUI /></div>) :(
         <>
             <div className="search-restaurant">
                 <input type="text" placeholder="search" className="input-search-value" value={searchTest} onChange={(e)=>{
@@ -40,8 +49,8 @@ const Body = () => {
                 ) : 
             <div className="restaurantList">
                 {
-                    restaurants.map((restaurant)=>{
-                        return <Reastraunt {...restaurant.data} key={restaurant.data.id}/>
+                    allRestaurants.map((restaurant)=>{
+                        return <Reastraunt {...restaurant.info} key={restaurant.info.id}/>
                     })
                 }
             </div>
