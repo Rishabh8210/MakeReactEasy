@@ -23,8 +23,7 @@ const Body = () => {
         const restaurantData = await fetch(Restaurant_URL);
         const json = await restaurantData.json();
         
-        console.log(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
-        setAllRestaurant(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants)
+        setAllRestaurant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     }
     return (allRestaurants.length == 0) ? (<div style={{display:"flex", gap:"10px", flexWrap:"wrap"}}><ShimerUI /><ShimerUI /><ShimerUI /><ShimerUI /><ShimerUI /><ShimerUI /><ShimerUI /><ShimerUI /><ShimerUI /></div>) :(
         <>
