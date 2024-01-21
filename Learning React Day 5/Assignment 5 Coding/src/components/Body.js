@@ -20,11 +20,15 @@ const Body = () => {
     }, [])
 
     async function getRestaurant(){
-        const restaurantData = await fetch(Restaurant_URL);
-        const json = await restaurantData.json();
-        
-        setAllRestaurant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-        setFilteredRestaurantData(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+        try{
+            const restaurantData = await fetch(Restaurant_URL);
+            const json = await restaurantData.json();
+                
+            setAllRestaurant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+            setFilteredRestaurantData(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+        }catch(Error){
+            console.log(Error)
+        }
     }
     return (allRestaurants.length == 0) ? <CardShimmer /> :(
         <>
