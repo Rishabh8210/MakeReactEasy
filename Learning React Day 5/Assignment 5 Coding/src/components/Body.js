@@ -6,7 +6,7 @@ import {Restaurant_URL} from "../../common.js"
 
 const filterData = function(searchTest, restaurantList){
     const filterDataFromList = restaurantList.filter((restaurant) =>{
-        return restaurant?.data?.name.toLowerCase().includes(searchTest.toLowerCase())
+        return restaurant?.info?.name.toLowerCase().includes(searchTest.toLowerCase())
     })
     return filterDataFromList;
 }
@@ -24,6 +24,7 @@ const Body = () => {
         const json = await restaurantData.json();
         
         setAllRestaurant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+        setFilteredRestaurantData(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     }
     return (allRestaurants.length == 0) ? (<div style={{display:"flex", gap:"10px", flexWrap:"wrap"}}><ShimerUI /><ShimerUI /><ShimerUI /><ShimerUI /><ShimerUI /><ShimerUI /><ShimerUI /><ShimerUI /><ShimerUI /></div>) :(
         <>
@@ -32,7 +33,7 @@ const Body = () => {
                     setSearchTest(e.target.value);
                 }}/>
                 <button onClick={() => {
-                        const data = filterData(searchTest, restaurantList);
+                        const data = filterData(searchTest, allRestaurants);
                         if(data.length == 0)
                             setDataFound(true);
                         else
@@ -44,11 +45,10 @@ const Body = () => {
             {
                 dataFound ? (
                     <h3>No Data Found</h3>
-                    // <ShimerUI />
                 ) : 
             <div className="restaurantList">
                 {
-                    allRestaurants.map((restaurant)=>{
+                    restaurants.map((restaurant)=>{
                         return <Reastraunt {...restaurant.info} key={restaurant.info.id}/>
                     })
                 }
