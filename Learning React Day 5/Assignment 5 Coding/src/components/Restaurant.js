@@ -9,7 +9,7 @@ const Reastraunt = ({name, avgRating, maxDeliveryTime, cuisines, locality, cloud
             <div className="restaurant-card-desc">
                 <h3>{name}</h3>
                 <h3>{avgRating} ● {maxDeliveryTime} mins</h3>
-                <h3>{cuisines.join(", ")}</h3>
+                <h3>{(cuisines.length > 3) ? (cuisines = cuisines.slice(0,3), cuisines.push("..."),cuisines.join(", ")) : cuisines.join(", ")}</h3>
                 <h3>{locality}</h3>
             </div>
         </div>

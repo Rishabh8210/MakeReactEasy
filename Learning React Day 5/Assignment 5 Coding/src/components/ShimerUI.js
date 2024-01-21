@@ -1,3 +1,4 @@
+import {shimer_length} from "../../common.js";
 const ShimerUI = () => {
     return(
         <div className="shimerui-card">
@@ -7,4 +8,15 @@ const ShimerUI = () => {
     );
 }
 
-export default ShimerUI;
+const CardShimmer = () => {
+    return(
+        <div className="shimer-container">
+            {
+                new Array(shimer_length).fill(0).map((element, index)=>{
+                    return <ShimerUI key = {index}/>
+                })
+            }
+        </div>
+    )
+}
+export default CardShimmer;
