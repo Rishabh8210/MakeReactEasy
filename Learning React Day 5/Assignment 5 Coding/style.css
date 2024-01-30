@@ -136,3 +136,19 @@ html, body{
     height: 100px;
     background-color: rgba(239, 239, 239, 0.704);
 }
+.footer-screen{
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer-left-card > img{
+    width: 150px;
+}
+.footer-restaturant-city-list{
+    display: flex;
+    font-size: 27px;
+    flex-wrap: wrap;
+    gap: 50px;
+    width: 400px;
+}
