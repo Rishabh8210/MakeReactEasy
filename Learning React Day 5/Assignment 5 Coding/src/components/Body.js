@@ -3,7 +3,7 @@ import {restaurantList} from "../../common.js"
 import { useEffect, useState } from "react"
 import CardShimmer from "../components/ShimerUI.js"
 import {Restaurant_URL} from "../../common.js"
-
+import Offline from "../components/Offline.js"
 const filterData = function(searchTest, restaurantList){
     const filterDataFromList = restaurantList.filter((restaurant) =>{
         return restaurant?.info?.name.toLowerCase().includes(searchTest.toLowerCase())
@@ -15,10 +15,19 @@ const Body = () => {
     const [allRestaurants, setAllRestaurant] = useState([]);
     const [restaurants, setFilteredRestaurantData] = useState([]);
     const [dataFound, setDataFound] = useState(false);
+    const [isOnline, setOnline] = useState(true)
     useEffect(()=>{
         getRestaurant();
     }, [])
 
+    useEffect(()=>{
+        window.addEventListener("online", ()=>{
+            setOnline(true);
+        })
+        window.addEventListener("offline", ()=>{
+            setOnline(false);
+        })
+    })
     async function getRestaurant(){
         try{
             const restaurantData = await fetch(Restaurant_URL);
@@ -30,7 +39,10 @@ const Body = () => {
             console.log(Error)
         }
     }
-    return (allRestaurants.length == 0) ? <CardShimmer /> :(
+
+    
+
+    return (!isOnline) ? <Offline />:(allRestaurants.length == 0) ? <CardShimmer /> :(
         <>
             <div className="search-restaurant">
                 <input type="text" placeholder="search" className="input-search-value" value={searchTest} onChange={(e)=>{

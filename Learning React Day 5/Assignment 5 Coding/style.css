@@ -152,3 +152,16 @@ html, body{
     gap: 50px;
     width: 400px;
 }
+
+.offline{
+    height: 50vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.175);
+    color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.offline h1{
+    font-size: 32px;
+}
